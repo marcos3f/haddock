@@ -93,7 +93,7 @@ def requisicao(request):
         # replace this number with your own WhatsApp Messaging number
         to_whatsapp_number='whatsapp:+5511963964336'
 
-        client.messages.create(body='Verificar possível incidência de: '+a+'; Nível: '+str(b)+' ; Area 3',
+        client.messages.create(body='Você está sendo solicitado na área 3 terminal 27. Registro de: '+a+' em nível '+str(b)+'.',
                        from_=from_whatsapp_number,
                        to=to_whatsapp_number)
 
