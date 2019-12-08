@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTIPE html>
+<html lang="pt">
+<head>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom right, #242661, black);
+            font-family: verdana;
+            color: white;
+            font-size: 300%;
+        }
+        .logo {
+            margin: 2vw;
+        }
+        div {
+            margin-left: 5vw;
+            width: 90vw;
+        }
+        div.smile {
+            text-align: center;
+            font-size: 100%;
+        }
+        p {
+            font-size: 60%;
+        }
+        .qr {
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <title>Haddock</title>
+</head>
+<body>
+    <img class="logo" src="{% static 'haddock/images/logo7.png' %}" height="50vh"></img>
+    </br>
+    <div>
+        Olá amig@! Por enquanto apenas nossa versão mobile está em operação.</br>
+        <p>Acesse este site pelo celular ou escaneie o QR Code:</p>
+    </div>
+    <div>
+        <img class="qr" src="{% static 'haddock/images/qrcode.png' %}"> </img>
+    </div>
+    </br>
+    <div class="smile">
+        :)
+    </div>
+</body>
+</html>
+

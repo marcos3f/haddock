@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTIPE html>
+<html lang="pt">
+<head>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="stylesheet" href="{% static 'haddock/style1.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'haddock/images/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <title>Haddock</title>
+    <script src="external.js" type="text/javascript" defer></script>
+</head>
+<body>
+<header>
+<div class="header">
+
+    <div class="logo">
+
+        <span class="helper"></span>
+        <img src="{% static 'haddock/images/logo7.png' %}"/>
+    </div>
+    <div class="menu">
+            <div class="menuside">
+            </br>
+</br>
+                <a href="{% url 'haddock:index' %}">Home</a>
+                <a href="{% url 'haddock:what' %}">O que é?</a>
+    <a href="{% url 'haddock:how' %}">Como funciona?</a>
+    <a href="{% url 'haddock:equipe' %}">Equipe</a>
+            </div>
+
+    <span class="helper"></span><i class="fa fa-bars"></i>
+    </div>
+</div>
+</header>
+
+<main>
+    <div class="mainpage-data">
+         <form action="{% url 'haddock:requisicao'  %}" method="post">
+{% csrf_token %}
+</br>
+Reporte aqui a ocorrência
+</br>
+</br>
+Incidente:  &nbsp
+<select class="button" style="font-size:3vmin; padding: 10px 15px"  name="respincidente">
+    {% for tipo in incidente %}
+        <option value="{{tipo.id}}">{{tipo.tipo}}</option>
+    {% endfor %}
+</select>
+</br>
+</br>
+Nível crítico: &nbsp
+<select class="button" style="font-size:3vmin; padding: 10px 15px" name="respcriticidade">
+    {% for descricao in criticidade %}
+        <option value="{{descricao.id}}">{{descricao.descricao}}</option>
+    {% endfor %}
+</select>
+</br>
+</br>
+<input type="submit" class="button" style="background-color: rgb(201, 99, 99)" value="Enviar incidente">
+</form>
+<p>{{a}}</p>    
+
+</div>
+
+</main>
+
+
+
+<footer>
+<div class="foot">
+<div class="footbutton"><span class="helper"></span><i class="fa fa-map-marker"></i><br><p style="font-size: 10%;">Mapa</p></div>
+<div class="active"><span class="helper"></span><i class="fa fa-file-text"></i></div>
+<div class="footbutton"><span class="helper"></span><i class="fa fa-fire-extinguisher"></i></div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
+
+

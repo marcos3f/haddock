@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTIPE html>
+<html lang="pt">
+<head>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="stylesheet" href="{% static 'haddock/style1.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'haddock/images/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <title>Haddock</title>
+    <style>
+        body {
+    background-image: url("{% static 'haddock/images/porto-de-containers.jpg' %}");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 10.5vh;
+        }
+        </style>
+</head>
+<body>
+<header>
+<div class="header">
+
+    <div class="logo">
+
+        <span class="helper"></span>
+        <img src="{% static 'haddock/images/logo7.png' %}">
+    </div>
+    <div class="menu">
+            <div class="menuside">
+            </br>
+<form action="{% url 'haddock:telaregistro' %}">
+                <input type="submit" class="button" value="EMERGÊNCIA"></input>
+</form>
+                <a href="{% url 'haddock:what' %}">O que é?</a>
+    <a href="{% url 'haddock:how' %}">Como funciona?</a>
+    <a href="{% url 'haddock:equipe' %}">Equipe</a>
+            </div>
+
+    <span class="helper"></span><i class="fa fa-bars"></i>
+    </div>
+</div>
+</header>
+
+
+<div id="textoboasvindas">
+
+</br>
+<mark>Acesse a plataforma e </br>conheça nossas soluções!</mark>
+</br>
+
+</br>
+<a href="{% url 'haddock:telaregistro' %}" ><mark>SAFETY FIRST</mark></a>
+
+</div>
+
+
+<div class="slantedDivA">
+        <p class="welcome">
+BEM-VINDO!
+        </p>
+</div>
+</body>
+</html>
